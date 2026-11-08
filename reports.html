@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#5b5ce2">
+  <title>Reports · Tution Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>try{var t=localStorage.getItem("th-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="dashboard.html"><span class="brand-mark"><i data-lucide="graduation-cap"></i></span><span>Tution<span class="brand-light">Hub</span><small>Centre management</small></span></a>
+    <div class="nav-label">WORKSPACE</div>
+    <nav id="sideNav">
+      <a class="nav-item" href="dashboard.html"><i data-lucide="layout-dashboard"></i>Dashboard</a>
+      <a class="nav-item" href="students.html"><i data-lucide="users"></i>Students</a>
+      <a class="nav-item" href="batches.html"><i data-lucide="layers"></i>Batches</a>
+      <a class="nav-item" href="attendance.html"><i data-lucide="calendar-check"></i>Attendance</a>
+      <a class="nav-item" href="payments.html"><i data-lucide="wallet"></i>Fees &amp; Payments</a>
+      <a class="nav-item active" aria-current="page" href="reports.html"><i data-lucide="chart-no-axes-combined"></i>Reports</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="storage-note"><i data-lucide="shield-check"></i><div><b>Your data stays here</b><small>Saved in this browser</small></div></div>
+      <a class="nav-item" href="settings.html"><i data-lucide="settings"></i>Settings &amp; Backup</a>
+      <div class="profile-mini"><div class="avatar">TH</div><div><b>Tuition Admin</b><small>Administrator</small></div><button id="themeToggle" class="icon-btn" aria-label="Toggle theme"><i data-lucide="moon"></i></button></div>
+    </div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar">
+      <span class="brand-mark mobile-brand" aria-hidden="true"><i data-lucide="graduation-cap"></i></span>
+      <div><div class="eyebrow" id="dateLabel">TUITION CENTRE</div><h1>Reports</h1></div>
+      <div class="top-actions"><button class="icon-btn top-theme" id="themeToggleTop" aria-label="Toggle theme"><i data-lucide="moon"></i></button><button class="btn btn-primary" id="quickAdd"><i data-lucide="plus"></i><span> Add student</span></button></div>
+    </header>
+    <div id="pageContent" class="page-content"></div>
+  </main>
+</div>
+<div id="modalRoot"></div>
+<div id="toastRoot" class="toast-root" aria-live="polite"></div>
+<nav class="bottom-nav" id="bottomNav" aria-label="Primary">
+  <a class="tab-item" href="dashboard.html"><span class="tab-ic"><i data-lucide="layout-dashboard"></i></span><span class="tab-lbl">Home</span></a>
+  <a class="tab-item" href="students.html"><span class="tab-ic"><i data-lucide="users"></i></span><span class="tab-lbl">Students</span></a>
+  <a class="tab-item" href="batches.html"><span class="tab-ic"><i data-lucide="layers"></i></span><span class="tab-lbl">Batches</span></a>
+  <a class="tab-item" href="attendance.html"><span class="tab-ic"><i data-lucide="calendar-check"></i></span><span class="tab-lbl">Attendance</span></a>
+  <a class="tab-item" href="payments.html"><span class="tab-ic"><i data-lucide="wallet"></i></span><span class="tab-lbl">Fees</span></a>
+  <button class="tab-item active" id="moreTab" aria-expanded="false" aria-controls="moreSheet"><span class="tab-ic"><i data-lucide="ellipsis"></i></span><span class="tab-lbl">More</span></button>
+</nav>
+<div class="more-sheet" id="moreSheet" role="menu">
+  <a class="sheet-item active" aria-current="page" href="reports.html" role="menuitem"><span class="sheet-icon"><i data-lucide="chart-no-axes-combined"></i></span><span>Reports<small>Revenue, enrolments and dues</small></span></a>
+  <a class="sheet-item" href="settings.html" role="menuitem"><span class="sheet-icon"><i data-lucide="settings"></i></span><span>Settings &amp; Backup<small>Theme, export and restore</small></span></a>
+  <button class="sheet-item" id="sheetTheme" role="menuitem"><span class="sheet-icon" id="sheetThemeIcon"><i data-lucide="moon"></i></span><span>Switch theme<small>Light or dark</small></span></button>
+</div>
+<div class="sheet-scrim" id="sheetScrim"></div>
+<script type="module" src="js/pages/reports.js"></script>
+</body>
+</html>
